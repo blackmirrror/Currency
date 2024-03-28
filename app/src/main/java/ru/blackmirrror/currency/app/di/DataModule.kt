@@ -1,13 +1,13 @@
 package ru.blackmirrror.currency.app.di
 
 import org.koin.dsl.module
-import ru.blackmirrror.currency.data.api.ApiFactory
-import ru.blackmirrror.currency.data.api.ApiService
-import ru.blackmirrror.currency.data.local.ConnectionSharedPreferences
-import ru.blackmirrror.currency.data.local.room.CurrencyDb
-import ru.blackmirrror.currency.data.local.room.CurrencyDbFactory
-import ru.blackmirrror.currency.data.repositories.CurrencyRepositoryImpl
-import ru.blackmirrror.currency.domain.repositories.CurrencyRepository
+import ru.blackmirrror.data.api.ApiFactory
+import ru.blackmirrror.data.api.ApiService
+import ru.blackmirrror.data.local.ConnectionSharedPreferences
+import ru.blackmirrror.data.local.room.CurrencyDb
+import ru.blackmirrror.data.local.room.CurrencyDbFactory
+import ru.blackmirrror.data.repositories.CurrencyRepositoryImpl
+import ru.blackmirrror.domain.repositories.CurrencyRepository
 
 val dataModule = module {
     single<CurrencyRepository> {

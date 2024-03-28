@@ -1,5 +1,6 @@
 package ru.blackmirrror.currency.presentation.currency
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ru.blackmirrror.currency.R
-import ru.blackmirrror.currency.domain.models.CurrencyItemResponse
+import ru.blackmirrror.domain.models.CurrencyItemResponse
 
 class CurrencyAdapter: ListAdapter<CurrencyItemResponse, CurrencyAdapter.CurrencyViewHolder>(CurrencyItemCallback()) {
 

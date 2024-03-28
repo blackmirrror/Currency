@@ -9,16 +9,15 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import ru.blackmirrror.currency.domain.models.ClientError
-import ru.blackmirrror.currency.domain.models.CurrencyItemResponse
-import ru.blackmirrror.currency.domain.models.CurrencyResponse
-import ru.blackmirrror.currency.domain.models.NoContent
-import ru.blackmirrror.currency.domain.models.NoInternet
-import ru.blackmirrror.currency.domain.models.ResultState
-import ru.blackmirrror.currency.domain.models.ServerError
-import ru.blackmirrror.currency.domain.usecases.GetCurrencyUseCase
-import ru.blackmirrror.currency.domain.usecases.GetInternetConnectionUseCase
-import ru.blackmirrror.currency.domain.usecases.GetLastLoadDateUseCase
+import ru.blackmirrror.domain.models.ClientError
+import ru.blackmirrror.domain.models.CurrencyItemResponse
+import ru.blackmirrror.domain.models.NoContent
+import ru.blackmirrror.domain.models.NoInternet
+import ru.blackmirrror.domain.models.ResultState
+import ru.blackmirrror.domain.models.ServerError
+import ru.blackmirrror.domain.usecases.GetCurrencyUseCase
+import ru.blackmirrror.domain.usecases.GetInternetConnectionUseCase
+import ru.blackmirrror.domain.usecases.GetLastLoadDateUseCase
 
 class CurrencyViewModel(
     private val getCurrencyUseCase: GetCurrencyUseCase,
