@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    android:background="?attr/colorSecondaryContainer"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_ru_name"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Австралийский доллар"
+        style="@style/SecondaryText"/>
+
+    <ImageView
+        android:id="@+id/iv_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_high"
+        app:layout_constraintTop_toBottomOf="@id/tv_ru_name"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_ru_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_current_price"
+        tools:text="AUD"
+        style="@style/PrimaryText" />
+
+    <TextView
+        android:id="@+id/tv_current_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_ru_name"
+        app:layout_constraintStart_toEndOf="@id/tv_name"
+        app:layout_constraintEnd_toStartOf="@id/tv_prev_price"
+        tools:text="60.4543 ₽"
+        style="@style/PrimaryText"/>
+
+    <TextView
+        android:id="@+id/tv_prev_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_ru_name"
+        app:layout_constraintStart_toEndOf="@id/tv_current_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="60.4543 ₽"
+        style="@style/PrimaryText"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Currency" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/label_primary_light</item>
+        <item name="colorSecondary">@color/label_secondary_light</item>
+        <item name="colorPrimaryContainer">@color/back_primary_light</item>
+        <item name="colorSecondaryContainer">@color/back_secondary_light</item>
+
+        <item name="backgroundColor">@color/back_primary_light</item>
+        <item name="android:statusBarColor">@color/label_secondary_light</item>
+    </style>
+
+    <style name="Theme.Currency" parent="Base.Theme.Currency" />
+</resources>
