@@ -4,6 +4,8 @@ import org.koin.dsl.module
 import ru.blackmirrror.currency.data.api.ApiFactory
 import ru.blackmirrror.currency.data.api.ApiService
 import ru.blackmirrror.currency.data.local.ConnectionSharedPreferences
+import ru.blackmirrror.currency.data.local.room.CurrencyDb
+import ru.blackmirrror.currency.data.local.room.CurrencyDbFactory
 import ru.blackmirrror.currency.data.repositories.CurrencyRepositoryImpl
 import ru.blackmirrror.currency.domain.repositories.CurrencyRepository
 
@@ -12,7 +14,8 @@ val dataModule = module {
         CurrencyRepositoryImpl(
             context = get(),
             service = get(),
-            connectionSharedPrefs = get()
+            connectionSharedPrefs = get(),
+            database = get()
         )
     }
 
@@ -22,5 +25,9 @@ val dataModule = module {
 
     factory {
         ConnectionSharedPreferences(context = get())
+    }
+
+    single<CurrencyDb> {
+        CurrencyDbFactory.create(context = get())
     }
 }

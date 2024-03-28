@@ -49,7 +49,7 @@ class CurrencyFragment : Fragment() {
     private fun observeData() {
         viewModel.currency.observe(viewLifecycleOwner) {
             if (it != null) {
-                currencyAdapter.submitList(it.valute.values.toList())
+                currencyAdapter.submitList(it)
             }
         }
         viewModel.error.observe(viewLifecycleOwner) {

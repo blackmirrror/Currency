@@ -10,6 +10,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import ru.blackmirrror.currency.domain.models.ClientError
+import ru.blackmirrror.currency.domain.models.CurrencyItemResponse
 import ru.blackmirrror.currency.domain.models.CurrencyResponse
 import ru.blackmirrror.currency.domain.models.NoContent
 import ru.blackmirrror.currency.domain.models.NoInternet
@@ -25,8 +26,8 @@ class CurrencyViewModel(
     private val getLastLoadDateUseCase: GetLastLoadDateUseCase
 ) : ViewModel() {
 
-    private val _currency = MutableLiveData<CurrencyResponse?>()
-    val currency: LiveData<CurrencyResponse?> = _currency
+    private val _currency = MutableLiveData<List<CurrencyItemResponse>?>()
+    val currency: LiveData<List<CurrencyItemResponse>?> = _currency
 
     private val _loading = MutableLiveData(false)
     val loading: LiveData<Boolean> = _loading
@@ -78,9 +79,10 @@ class CurrencyViewModel(
 
     private fun <T> handleError(result: ResultState<T>) {
         if (result is ResultState.Error) {
+            _currency.postValue(result.data as List<CurrencyItemResponse>)
             when (result.error) {
                 is NoInternet -> {
-                    _error.postValue("Соединение потеряно")
+                    _error.postValue("Соединение потеряно, загружаем сохраненные данные")
                     closeScope()
                 }
                 is NoContent -> _error.postValue("Пока здесь пусто")
